@@ -24,8 +24,10 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Get Dependencies
-        run: flutter pub get
+      - name: Resolve Dependency Conflict & Get Packages
+        run: |
+          flutter pub add intl:^0.20.3
+          flutter pub get
 
       - name: Build AAB
         run: flutter build appbundle --release --no-pub
