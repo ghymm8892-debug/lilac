@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -23,11 +23,8 @@ jobs:
           channel: 'stable'
           flutter-version: '3.24.3'
 
-      - name: Get Dependencies with Override
-        run: flutter pub get --legacy
-
-      - name: Build AAB
-        run: flutter build appbundle --release --no-pub
+      - name: Build AAB Direct
+        run: flutter build appbundle --release
 
       - name: Upload AAB Artifact
         uses: actions/upload-artifact@v4
