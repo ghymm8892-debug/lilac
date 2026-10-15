@@ -23,8 +23,8 @@ jobs:
           channel: 'stable'
           flutter-version: '3.24.3'
 
-      - name: Get Dependencies
-        run: flutter pub get
+      - name: Get Dependencies with Override
+        run: flutter pub get --legacy
 
       - name: Build AAB
         run: flutter build appbundle --release --no-pub
