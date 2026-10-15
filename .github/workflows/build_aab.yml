@@ -23,7 +23,7 @@ jobs:
           channel: 'stable'
           flutter-version: '3.24.3'
 
-      - name: Resolve Dependency Conflict & Get Packages
+      - name: Get Dependencies
         run: |
           flutter pub add intl:^0.20.3
           flutter pub get
